@@ -1,0 +1,22 @@
+$main-background: #151515
+$violet: #5C53F3
+$light-green: #B9E01E
+$main-text: #FAFAFA
+$secondary-text: #A3A3B1
+$light-violet: #887DFF
+$dark-violet: #2D2763
+$gray: #71717E
+$title: #ECECEC
+$orange: #FA541C
+$dark-gray: #464753
+$lavender-blue: #C8C3FF
+
+$breakpoints: ( small: 320px, medium: 801px, large: 1025px)
+
+@mixin respond-to($breakpoint)
+  @if map-has-key($breakpoints, $breakpoint)
+    @media (min-width: map-get($breakpoints, $breakpoint))
+      @content
+
+  @else
+    @warn "No value exists in `$breakpoints` for `#{$breakpoint}`."
