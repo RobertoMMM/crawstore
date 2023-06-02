@@ -1,4 +1,4 @@
-import styles from 'components/button/containedButton/index.module.sass';
+import styles from 'components/button/contained/index.module.sass';
 
 interface Props {
   text: string;

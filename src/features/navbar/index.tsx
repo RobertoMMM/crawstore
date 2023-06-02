@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Logo from 'assets/Logo.svg';
 import styles from 'features/navbar/index.module.sass';
 import Menu from './components/menu';
-import ContainedButton from '../../components/button/containedButton';
+import ContainedButton from '../../components/button/contained';
 
 const Navbar = () => {
   return (
@@ -15,7 +15,7 @@ const Navbar = () => {
       </button>
       <Menu />
       <ContainedButton
-        className={styles.special}
+        className={styles.button}
         text={'Try for free'}
         onClick={() => {}}
       />

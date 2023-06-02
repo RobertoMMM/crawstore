@@ -1,0 +1,36 @@
+@import 'src/styles/variables.module'
+
+.drawer
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  background-color: $main-background
+  color: $main-text
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-direction: column-reverse
+
+  button
+    align-self: center
+
+  .header
+    display: flex
+    justify-content: flex-end
+
+  .closeButton
+    background-color: transparent
+    border: none
+
+  .body
+    display: flex
+    justify-content: center
+
+  .menu
+    list-style: none
+    padding: 0
+
+  .menuItem
+    margin-bottom: 1rem

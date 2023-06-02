@@ -1,15 +1,14 @@
 @import 'src/styles/variables.module'
-@import 'components/button/containedButton/index.module'
+@import 'components/button/contained/index.module'
 
 .navbar
   padding: 15px
   align-items: center
   justify-content: space-between
   display: flex
-  @include respond-to(medium)
-    justify-content: space-evenly
+  font-size: 18px
 
-  .special
+  .button
     @extend .button
     display: none
     @include respond-to(medium)
@@ -31,4 +30,4 @@
   .line
     width: 100%
     height: 2px
-    background-color: #ECECEC
+    background-color: $title
