@@ -34,6 +34,9 @@ import HomePage from '../features/homepage';
 import Bots from '../features/bots';
 import Shop from '../features/shop';
 import Alternatives from '../features/alternatives';
+import Companies from '../features/companies';
+import Benefits from '../features/benefits';
+import Automation from '../features/automation';
 
 const slides = [
   {
@@ -47,64 +50,6 @@ const slides = [
     description:
       'Et malesuada fames ac turpis egestas. Mattis enim ut tellus elementum sagittis vitae. Nisi lacus sed viverra tellus in hac. Tristique sollicitudin nibh sit amet commodo. Blanditturpis cursus in hac habitasse platea.',
     image: MainImage,
-  },
-];
-
-export const benefits = [
-  {
-    title: 'Private namespace, share link',
-    description:
-      'Sed felis eget velit aliquet. Semper feugiat nibh sed pulvinar proin. Morbi tincidunt augue interdum velit euismod in pellentesque massa. ',
-    icon: MDown,
-  },
-  {
-    title: 'Private namespace, share link',
-    description:
-      'Sed felis eget velit aliquet. Semper feugiat nibh sed pulvinar proin. Morbi tincidunt augue interdum velit euismod in pellentesque massa. ',
-    icon: MDown,
-  },
-  {
-    title: 'Private namespace, share link',
-    description:
-      'Sed felis eget velit aliquet. Semper feugiat nibh sed pulvinar proin. Morbi tincidunt augue interdum velit euismod in pellentesque massa. ',
-    icon: MDown,
-  },
-  {
-    title: 'Private namespace, share link',
-    description:
-      'Sed felis eget velit aliquet. Semper feugiat nibh sed pulvinar proin. Morbi tincidunt augue interdum velit euismod in pellentesque massa. ',
-    icon: MDown,
-  },
-  {
-    title: 'Private namespace, share link',
-    description:
-      'Sed felis eget velit aliquet. Semper feugiat nibh sed pulvinar proin. Morbi tincidunt augue interdum velit euismod in pellentesque massa. ',
-    icon: MDown,
-  },
-  {
-    title: 'Private namespace, share link',
-    description:
-      'Sed felis eget velit aliquet. Semper feugiat nibh sed pulvinar proin. Morbi tincidunt augue interdum velit euismod in pellentesque massa. ',
-    icon: MDown,
-  },
-];
-
-const figures = [
-  {
-    value: 411,
-    text: 'Workflows in Store',
-  },
-  {
-    value: 1205,
-    text: 'Tasks in Store',
-  },
-  {
-    value: 4230,
-    text: 'Active users',
-  },
-  {
-    value: 11820,
-    text: 'Unique installs',
   },
 ];
 
@@ -200,32 +145,9 @@ export default function Home() {
       <Bots />
       <Shop />
       <Alternatives />
-      <section className={styles.automation}>
-        <Image src={AutoLeft} alt={'autoLeft'} className={styles.leftImage} />
-        <div className={styles.content}>
-          <div className={styles.title}>
-            Build web automation bots faster then ever using crawless
-          </div>
-          <div className={styles.description}>
-            Join the community of developers from all over the world that rely
-            on crawless
-          </div>
-          <div className={styles.dataFigures}>
-            {figures.map(({ text, value }, index) => (
-              <div className={styles.figure} key={index}>
-                <div className={styles.value}>{value}</div>
-                <div className={styles.text}>{text}</div>
-              </div>
-            ))}
-          </div>
-          <ContainedButton text={'Get started now'} onClick={() => {}} />
-        </div>
-        <Image
-          src={AutoRight}
-          alt={'autoRight'}
-          className={styles.rightImage}
-        />
-      </section>
+      <Benefits />
+      <Companies />
+      <Automation />
       <section className={styles.products}>
         {products.map(({ icon, title, description }, index) => (
           <div key={index} className={styles.product}>

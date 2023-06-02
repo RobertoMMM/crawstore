@@ -1,0 +1,27 @@
+@import 'src/styles/variables.module'
+
+.benefits
+  margin-top: 100px
+  text-align: start
+  gap: 70px
+  display: grid
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
+
+  .card
+    display: flex
+    flex-direction: column
+    gap: 25px
+
+    .title, .description
+      margin: 0
+      font-size: 20px
+      font-weight: 400
+      line-height: 28px
+      @include respond-to(medium)
+        font-size: 30px
+
+    .description
+      font-size: 18px
+
+    .image
+      width: 50px
