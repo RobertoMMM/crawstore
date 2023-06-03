@@ -20,3 +20,13 @@ main {
     max-width: 1400px;
     padding: 0 15px
 }
+
+.swiper-button-next:after, .swiper-button-prev:after {
+    color: #A3A3B1
+}
+
+@media(max-width: 801px){
+    .swiper-button-next:after, .swiper-button-prev:after {
+        display: none;
+    }
+}

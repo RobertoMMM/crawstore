@@ -1,0 +1,73 @@
+@import 'src/styles/variables.module'
+
+
+.information
+  width: 100%
+
+  .image
+    max-width: 500px
+    width: 100%
+    height: 100%
+
+  .actions
+    margin-top: 80px
+    display: flex
+    justify-content: start
+    flex-wrap: wrap
+    gap: 10px
+    margin-left: 15px
+
+  .buttonBody
+    display: flex
+    align-items: center
+    gap: 10px
+
+  .buttonIcons
+    width: 25px
+    height: 25px
+    color: white
+
+  .slider
+    display: flex
+    margin-top: 50px
+    width: calc(100vw - 40px)
+    max-width: 100%
+    min-height: 500px
+    align-items: center
+    justify-content: center
+
+    .swiper-pagination-bullet
+      background: red
+
+    .slide
+      display: flex
+      align-self: center
+      justify-content: center
+      flex-direction: column-reverse
+      align-items: center
+      @include respond-to(large)
+        flex-direction: row
+
+      .text
+        display: flex
+        flex-direction: column
+        text-align: start
+        gap: 15px
+        max-width: 500px
+
+        .main
+          color: $title
+          font-weight: 300
+          font-size: 38px
+          line-height: 44px
+
+        .secondary
+          color: $secondary-text
+          font-weight: 400
+          font-size: 18px
+          line-height: 28px
+
+      .image
+        display: flex
+        min-width: 200px
+        max-width: 600px

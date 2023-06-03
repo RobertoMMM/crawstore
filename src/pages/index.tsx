@@ -1,27 +1,16 @@
 import MainLayout from '../layouts/main';
-import { ReactElement, useState } from 'react';
+import { CSSProperties, ReactElement, useState } from 'react';
 import Image from 'next/image';
 import styles from 'pages/index.module.sass';
 import 'keen-slider/keen-slider.min.css';
 import MainImage from 'assets/rightImage.svg';
-import OutlinedButton from '../components/button/outlined';
-import DownloadIcon from 'assets/icons/download.svg';
-import ShareIcon from 'assets/icons/share.svg';
-import BracketsIcon from 'assets/icons/brackets.svg';
+import OutlinedButton from '../components/common/button/outlined';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation } from 'swiper';
+import { Pagination } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import ContainedButton from '../components/button/contained';
-import MDown from 'assets/icons/mdown.svg';
-import Company1 from 'assets/icons/companies/1.svg';
-import Company2 from 'assets/icons/companies/2.svg';
-import Company3 from 'assets/icons/companies/3.svg';
-import Company4 from 'assets/icons/companies/4.svg';
-import Company5 from 'assets/icons/companies/5.svg';
-import Company6 from 'assets/icons/companies/6.svg';
-import AutoLeft from 'assets/automationLeft.svg';
-import AutoRight from 'assets/automationRight.svg';
+import 'swiper/css/pagination';
+import ContainedButton from '../components/common/button/contained';
 import IDE from 'assets/icons/ide.svg';
 import AgreementIcon from 'assets/icons/confirm.svg';
 import SmallLogo from 'assets/icons/logoSmall.svg';
@@ -30,15 +19,28 @@ import TwitterIcon from 'assets/icons/socialMedia/twitter.svg';
 import InstagramIcon from 'assets/icons/socialMedia/instagram.svg';
 import StackoverflowIcon from 'assets/icons/socialMedia/stackoverflow.svg';
 import LinkedIcon from 'assets/icons/socialMedia/linkedin.svg';
-import HomePage from '../features/homepage';
-import Bots from '../features/bots';
-import Shop from '../features/shop';
-import Alternatives from '../features/alternatives';
-import Companies from '../features/companies';
-import Benefits from '../features/benefits';
-import Automation from '../features/automation';
+import HomePage from '../components/modules/homepage/header';
+import Bots from '../components/modules/homepage/bots';
+import Shop from '../components/modules/homepage/shop';
+import Alternatives from '../components/modules/homepage/alternatives';
+import Companies from '../components/modules/homepage/companies';
+import Benefits from '../components/modules/homepage/benefits';
+import Automation from '../components/modules/homepage/automation';
+import WorkFlowSlider from '../components/modules/homepage/slider/workflow';
 
 const slides = [
+  {
+    title: 'Import/export workflow and tasks',
+    description:
+      'Et malesuada fames ac turpis egestas. Mattis enim ut tellus elementum sagittis vitae. Nisi lacus sed viverra tellus in hac. Tristique sollicitudin nibh sit amet commodo. Blanditturpis cursus in hac habitasse platea.',
+    image: MainImage,
+  },
+  {
+    title: 'Import/export workflow and tasks',
+    description:
+      'Et malesuada fames ac turpis egestas. Mattis enim ut tellus elementum sagittis vitae. Nisi lacus sed viverra tellus in hac. Tristique sollicitudin nibh sit amet commodo. Blanditturpis cursus in hac habitasse platea.',
+    image: MainImage,
+  },
   {
     title: 'Import/export workflow and tasks',
     description:
@@ -91,6 +93,14 @@ const links = [
   },
 ];
 
+const sliderStyles = {
+  '--swiper-pagination-bottom': '0px',
+  '--swiper-pagination-color': '#5C53F3',
+  '--swiper-pagination-bullet-inactive-color': '#3E3D4C',
+  '--swiper-pagination-bullet-inactive-opacity': '1',
+  '--swiper-pagination-bullet-size': '16px',
+} as CSSProperties;
+
 export default function Home() {
   const [swiper, setSwiper] = useState<any>();
   const [activeSlide, setActiveSlide] = useState(0);
@@ -98,54 +108,33 @@ export default function Home() {
   return (
     <section className={styles.section}>
       <HomePage />
-      <section className={styles.information}>
-        <div className={styles.actions}>
-          <OutlinedButton
-            text={
-              <div className={styles.buttonBody}>
-                <Image
-                  src={DownloadIcon}
-                  className={styles.buttonIcons}
-                  alt={'download'}
-                />
-                On click install
-              </div>
-            }
-            className={styles.button}
-            onClick={() => {}}
-          />
-          <OutlinedButton
-            text={
-              <div className={styles.buttonBody}>
-                <Image
-                  src={ShareIcon}
-                  className={styles.buttonIcons}
-                  alt={'download'}
-                />
-                Share
-              </div>
-            }
-            onClick={() => {}}
-          />
-          <OutlinedButton
-            text={
-              <div className={styles.buttonBody}>
-                <Image
-                  src={BracketsIcon}
-                  className={styles.buttonIcons}
-                  alt={'download'}
-                />
-                Version control system
-              </div>
-            }
-            onClick={() => {}}
-          />
-        </div>
-      </section>
+      <WorkFlowSlider />
       <Bots />
       <Shop />
       <Alternatives />
       <Benefits />
+      <Swiper
+        className={styles.slider}
+        spaceBetween={50}
+        modules={[Pagination]}
+        pagination={{
+          dynamicBullets: true,
+          clickable: true,
+        }}
+        style={sliderStyles}
+        onSlideChange={(swiper) => setActiveSlide(swiper.activeIndex)}
+        onSwiper={(swiper) => setSwiper(swiper)}
+      >
+        {slides.map(({ title, image, description }, index) => (
+          <SwiperSlide className={styles.slide} key={index}>
+            <div className={styles.text}>
+              <span className={styles.main}>{title}</span>
+              <span className={styles.secondary}>{description}</span>
+            </div>
+            <Image src={image} alt={'main-image'} className={styles.image} />
+          </SwiperSlide>
+        ))}
+      </Swiper>
       <Companies />
       <Automation />
       <section className={styles.products}>
@@ -213,25 +202,6 @@ export default function Home() {
           <Image src={LinkedIcon} alt={'linkedin'} />
         </div>
       </footer>
-      {/*<Swiper*/}
-      {/*  // className={styles.slider}*/}
-      {/*  navigation={true}*/}
-      {/*  spaceBetween={50}*/}
-      {/*  modules={[Navigation]}*/}
-      {/*  slidesPerView={1}*/}
-      {/*  onSlideChange={(swiper) => setActiveSlide(swiper.activeIndex)}*/}
-      {/*  onSwiper={(swiper) => setSwiper(swiper)}*/}
-      {/*>*/}
-      {/*  {slides.map(({ title, image, description }, index) => (*/}
-      {/*    <SwiperSlide className={`number-slide${index}`} key={index}>*/}
-      {/*      <div className={styles.text}>*/}
-      {/*        <span className={styles.main}>{title}</span>*/}
-      {/*        <span className={styles.secondary}>{description}</span>*/}
-      {/*      </div>*/}
-      {/*      <Image src={image} alt={'main-image'} className={styles.image} />*/}
-      {/*    </SwiperSlide>*/}
-      {/*  ))}*/}
-      {/*</Swiper>*/}
     </section>
   );
 }
