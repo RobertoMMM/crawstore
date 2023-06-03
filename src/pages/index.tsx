@@ -1,12 +1,7 @@
 import MainLayout from '../layouts/main';
-import { CSSProperties, ReactElement, useState } from 'react';
-import Image from 'next/image';
 import styles from 'pages/index.module.sass';
 import 'keen-slider/keen-slider.min.css';
-import MainImage from 'assets/rightImage.svg';
 import OutlinedButton from '../components/common/button/outlined';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -28,6 +23,7 @@ import Benefits from '../components/modules/homepage/benefits';
 import Automation from '../components/modules/homepage/automation';
 import WorkFlowSlider from '../components/modules/homepage/slider/workflow';
 import ReviewSlider from '../components/modules/homepage/slider/review';
+import { ReactElement } from 'react';
 
 const products = [
   {

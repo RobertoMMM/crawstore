@@ -33,13 +33,13 @@ const WorkFlowSlider = () => {
         navigation
         onSwiper={(swiper) => setSwiper(swiper)}
       >
-        {slides.map(({ title, image: Image, description }, index) => (
+        {slides.map(({ title, image, description }, index) => (
           <SwiperSlide className={styles.slide} key={index}>
             <div className={styles.text}>
               <span className={styles.main}>{title}</span>
               <span className={styles.secondary}>{description}</span>
             </div>
-            <Image className={styles.image} />
+            <Image src={image} alt={'slideImage'} className={styles.image} />
           </SwiperSlide>
         ))}
       </Swiper>

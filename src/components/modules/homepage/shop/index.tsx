@@ -1,7 +1,7 @@
 import styles from './index.module.sass';
 import OutlinedButton from '../../../common/button/outlined';
+import ShopImage from 'assets/shop.png';
 import Image from 'next/image';
-import ShopImage from 'assets/shop.svg';
 
 const Shop = () => {
   return (
@@ -15,7 +15,7 @@ const Shop = () => {
         </div>
         <OutlinedButton text={'Contact us'} onClick={() => {}} />
       </div>
-      <ShopImage className={styles.image} />
+      <Image src={ShopImage} alt={'asddas'} className={styles.image} />
     </section>
   );
 };

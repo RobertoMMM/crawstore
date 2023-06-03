@@ -1,4 +1,4 @@
-import MainImage from '../../../../../../assets/rightImage.svg';
+import MainImage from '../../../../../../assets/rightImage.png';
 import DownloadIcon from '../../../../../../assets/icons/download.svg';
 import ShareIcon from '../../../../../../assets/icons/share.svg';
 import BracketsIcon from '../../../../../../assets/icons/brackets.svg';
