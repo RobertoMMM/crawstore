@@ -1,15 +1,23 @@
-import styles from './index.module.sass';
+import './index.sass';
 import { benefits } from './static';
-import Image from 'next/image';
+import Typography from '../../../common/typography';
 
 const Benefits = () => {
   return (
-    <section className={styles.benefits}>
+    <section className={'benefits'}>
       {benefits.map(({ title, description, icon: Icon }, index) => (
-        <div key={index} className={styles.card}>
-          <Icon className={styles.image} />
-          <div className={styles.title}>{title}</div>
-          <div className={styles.description}>{description}</div>
+        <div key={index} className={'card'}>
+          <Icon className={'image'} />
+          <Typography className={'title'} variant={'h3'}>
+            {title}
+          </Typography>
+          <Typography
+            className={'description'}
+            variant={'subtitle2'}
+            weight={'regular'}
+          >
+            {description}
+          </Typography>
         </div>
       ))}
     </section>

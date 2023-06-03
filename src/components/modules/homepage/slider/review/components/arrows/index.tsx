@@ -1,5 +1,5 @@
 import ArrowLeft from '../../../../../../../assets/icons/arrowLongLeft.svg';
-import styles from './index.module.sass';
+import './index.sass';
 import ArrowRight from '../../../../../../../assets/icons/arrowLongRight.svg';
 
 interface Props {
@@ -10,15 +10,11 @@ interface Props {
 
 const Arrow = ({ orientation, disabled, onClick }: Props) => {
   return (
-    <button className={styles.arrowButton} onClick={onClick}>
+    <button className={'arrowButton'} onClick={onClick}>
       {orientation === 'left' ? (
-        <ArrowLeft
-          className={`${styles.icon} ${disabled && styles.disabled}`}
-        />
+        <ArrowLeft className={`${'icon'} ${disabled && 'disabled'}`} />
       ) : (
-        <ArrowRight
-          className={`${styles.icon} ${disabled && styles.disabled}`}
-        />
+        <ArrowRight className={`${'icon'} ${disabled && 'disabled'}`} />
       )}
     </button>
   );

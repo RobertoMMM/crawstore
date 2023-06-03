@@ -1,17 +1,25 @@
-import Image from 'next/image';
 import HomeLogo from '../../../../assets/homeLogo.svg';
-import styles from './index.module.sass';
+import './index.sass';
+import Typography from '../../../common/typography';
 
 const HomePage = () => {
   return (
-    <header className={styles.header}>
-      <HomeLogo className={styles.logo} />
-      <div className={styles.title}>Crawless Store —</div>
-      <div className={styles.title}>the shortest way to create your bots</div>
-      <div className={styles.description}>
+    <header className={'header'}>
+      <HomeLogo className={'logo'} />
+      <Typography variant={'h1'} weight={'light'}>
+        Crawless Store —
+      </Typography>
+      <Typography variant={'h1'} weight={'light'}>
+        the shortest way to create your bots
+      </Typography>
+      <Typography
+        variant={'subtitle1'}
+        weight={'regular'}
+        className={'description'}
+      >
         Browse ready-made tasks and workflows from the growing developers
         community around the world
-      </div>
+      </Typography>
     </header>
   );
 };

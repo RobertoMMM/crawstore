@@ -1,11 +1,13 @@
-import styles from './index.module.sass';
+import './index.sass';
 import { Pagination } from 'swiper';
 import { CSSProperties, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { people } from './static';
-import ArrowRight from 'assets/icons/arrowLongRight.svg';
-import ArrowLeft from 'assets/icons/arrowLongLeft.svg';
 import Arrow from './components/arrows';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import Typography from '../../../../common/typography';
 
 const sliderStyles = {
   '--swiper-pagination-bottom': '0px',
@@ -31,20 +33,26 @@ const ReviewSlider = () => {
   };
 
   return (
-    <section className={styles.reviews}>
-      <div className={styles.title}>Trusted the world over</div>
-      <div className={styles.description}>
+    <section className={'reviews'}>
+      <Typography className={'title'} variant={'h2'} weight={'light'}>
+        Trusted the world over
+      </Typography>
+      <Typography
+        className={'description'}
+        variant={'subtitle1'}
+        weight={'regular'}
+      >
         Businesses and dev teams of every size have already made crawless their
         main web automation platform
-      </div>
-      <div className={styles.sliderContainer}>
+      </Typography>
+      <div className={'sliderContainer'}>
         <Arrow
           onClick={handleNavigatePrev}
           disabled={!isActivePrevButton}
           orientation={'left'}
         />
         <Swiper
-          className={styles.slider}
+          className={'slider'}
           spaceBetween={50}
           modules={[Pagination]}
           pagination={{
@@ -56,12 +64,18 @@ const ReviewSlider = () => {
           onSwiper={(swiper) => setSwiper(swiper)}
         >
           {people.map(({ job, image: AuthorIcon, quote, name }, index) => (
-            <SwiperSlide className={styles.slide} key={index}>
-              <div className={styles.content}>
-                <div className={styles.quote}>{quote}</div>
-                <AuthorIcon className={styles.image} />
-                <div className={styles.name}>{name}</div>
-                <div className={styles.job}>{job}</div>
+            <SwiperSlide className={'slide'} key={index}>
+              <div className={'content'}>
+                <Typography className={'quote'} variant={'h5'}>
+                  {quote}
+                </Typography>
+                <AuthorIcon className={'image'} />
+                <Typography className={'name'} weight={'bold'} variant={'h6'}>
+                  {name}
+                </Typography>
+                <Typography className={'job'} weight={'regular'} variant={'h6'}>
+                  {job}
+                </Typography>
               </div>
             </SwiperSlide>
           ))}

@@ -1,14 +1,15 @@
-import styles from 'components/common/button/contained/index.module.sass';
+import 'components/common/button/contained/index.sass';
+import { ReactElement } from 'react';
 
-interface Props {
-  text: string;
-  onClick: any;
-  className?: string;
-}
-
-const ContainedButton = ({ text, onClick, className }: Props) => {
+const ContainedButton = ({
+  text,
+  onClick,
+}: {
+  text: string | ReactElement;
+  onClick: () => void;
+}) => {
   return (
-    <button className={className || styles.button} onClick={onClick}>
+    <button className={'containedButton'} onClick={onClick}>
       {text}
     </button>
   );

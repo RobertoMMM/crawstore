@@ -1,104 +1,75 @@
-import styles from './index.module.sass';
-import Image from 'next/image';
-import DownloadGray from '../../../../assets/icons/downloadGray.svg';
+import './index.sass';
 import ContainedButton from '../../../common/button/contained';
 import { bigBotzCards, chips, smallBotzCards } from './static';
+import Typography from '../../../common/typography';
+import Card from './components/card';
 
 const Bots = () => {
   return (
-    <section className={styles.bots}>
-      <div className={styles.title}>
+    <section className={'bots'}>
+      <Typography className={'title'} variant={'h2'}>
         Start using bots in your projects right now
-      </div>
-      <div className={styles.chipContainer}>
+      </Typography>
+      <div className={'chipContainer'}>
         {chips.map((text, index) => (
-          <span key={index} className={styles.chip}>
+          <Typography
+            key={index}
+            className={'chip'}
+            weight={'regular'}
+            variant={'subtitle2'}
+          >
             {text}
-          </span>
+          </Typography>
         ))}
       </div>
-      <div className={styles.cardsContainer}>
-        <div className={styles.small}>
+      <div className={'cardsContainer'}>
+        <div className={'small'}>
           {smallBotzCards.map(
             (
               {
                 titleIcon: TitleIcon,
                 title,
                 downloads,
-                link: { text, icon: LinkIcon },
+                link,
                 description,
-                author: { name, icon: AuthorIcon },
+                author,
               },
               index
             ) => (
-              <div key={index} className={styles.card}>
-                <div className={styles.content}>
-                  <div className={styles.title}>
-                    <TitleIcon className={styles.image} />
-                    <div className={styles.text}>{title}</div>
-                  </div>
-                </div>
-                <div className={styles.breakLine}></div>
-                <div className={styles.content}>
-                  <div className={styles.link}>
-                    <LinkIcon className={styles.image} />
-                    <div className={styles.text}>{text}</div>
-                  </div>
-                  <div className={styles.description}>{description}</div>
-                  <footer className={styles.footer}>
-                    <div className={styles.author}>
-                      <AuthorIcon className={styles.image} />
-                      <div className={styles.name}>{name}</div>
-                    </div>
-                    <div className={styles.download}>
-                      <DownloadGray className={styles.image} />
-                      <div className={styles.text}>{downloads}</div>
-                    </div>
-                  </footer>
-                </div>
-              </div>
+              <Card
+                key={index}
+                TitleIcon={TitleIcon}
+                title={title}
+                description={description}
+                author={author}
+                link={link}
+                downloads={downloads}
+              />
             )
           )}
         </div>
-        <div className={styles.big}>
+        <div className={'big'}>
           {bigBotzCards.map(
             (
               {
                 titleIcon: TitleIcon,
                 title,
                 downloads,
-                link: { text, icon: LinkIcon },
+                link,
                 description,
-                author: { icon: AuthorIcon, name },
+                author,
               },
               index
             ) => (
-              <div key={index} className={styles.card}>
-                <div className={styles.content}>
-                  <div className={styles.title}>
-                    <TitleIcon className={styles.image} />
-                    <div className={styles.text}>{title}</div>
-                  </div>
-                </div>
-                <div className={styles.breakLine}></div>
-                <div className={styles.content}>
-                  <div className={styles.link}>
-                    <LinkIcon className={styles.image} />
-                    <div className={styles.text}>{text}</div>
-                  </div>
-                  <div className={styles.description}>{description}</div>
-                  <footer className={styles.footer}>
-                    <div className={styles.author}>
-                      <AuthorIcon className={styles.image} />
-                      <div className={styles.name}>{name}</div>
-                    </div>
-                    <div className={styles.download}>
-                      <DownloadGray className={styles.image} />
-                      <div className={styles.text}>{downloads}</div>
-                    </div>
-                  </footer>
-                </div>
-              </div>
+              <Card
+                key={index}
+                TitleIcon={TitleIcon}
+                title={title}
+                description={description}
+                author={author}
+                link={link}
+                downloads={downloads}
+              />
             )
           )}
         </div>

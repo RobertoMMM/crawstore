@@ -1,21 +1,20 @@
-import Image from 'next/image';
 import Logo from 'assets/Logo.svg';
-import styles from 'components/modules/homepage/navbar/index.module.sass';
+import './index.sass';
 import Menu from './components/menu';
 import ContainedButton from '../../../common/button/contained';
 
 const Navbar = () => {
   return (
-    <nav className={styles.navbar}>
-      <Logo className={styles.image} />
-      <button className={styles.navBurgerButton} onClick={() => {}}>
-        <span className={styles.line}></span>
-        <span className={styles.line}></span>
-        <span className={styles.line}></span>
+    <nav className={'navbar'}>
+      <Logo className={'image'} />
+      <button className={'navBurgerButton'} onClick={() => {}}>
+        <span className={'line'}></span>
+        <span className={'line'}></span>
+        <span className={'line'}></span>
       </button>
       <Menu />
       <ContainedButton
-        className={styles.button}
+        className={'containedButton'}
         text={'Try for free'}
         onClick={() => {}}
       />

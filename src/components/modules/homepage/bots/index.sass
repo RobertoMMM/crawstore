@@ -1,0 +1,49 @@
+@import 'src/styles/variables'
+
+.bots
+  margin-top: 80px
+  text-align: center
+
+  .title
+    color: $title
+
+  button
+    margin-top: 70px
+
+  .chipContainer
+    flex-wrap: wrap
+    display: flex
+    justify-content: center
+    gap: 10px
+    margin-top: 30px
+
+    .chip
+      background: transparent
+      border-radius: 4px
+      padding: 0 16px
+      color: $gray
+      border: 1px solid #71717E
+
+      &:hover
+        transition: .3s
+        background: $dark-violet
+        border: 1px solid $light-violet
+        color: $title
+
+  .cardsContainer
+    margin-top: 40px
+    display: flex
+    flex-direction: column
+    gap: 20px
+    @include respond-to(large)
+      flex-direction: column-reverse
+
+    .small
+      display: grid
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))
+      gap: 20px
+
+    .big
+      display: grid
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))
+      gap: 20px

@@ -1,0 +1,27 @@
+@import 'src/styles/variables'
+
+.pageFooter
+  margin-top: 20px
+  display: flex
+  min-height: 80px
+  align-items: center
+  justify-content: center
+  flex-wrap: wrap
+  gap: 20px
+  @include respond-to(large)
+    justify-content: space-between
+    padding: 40px
+
+  .links
+    color: $dark-gray
+    font-weight: 400
+    font-size: 18px
+    display: flex
+    gap: 30px
+    flex-wrap: wrap
+
+  .socialMedia
+    display: flex
+    gap: 30px
+    flex-wrap: wrap
+    margin-bottom: 20px

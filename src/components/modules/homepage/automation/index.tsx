@@ -1,34 +1,35 @@
-import React from 'react';
-import styles from './index.module.sass';
-import Image from 'next/image';
+import './index.sass';
 import AutoLeft from '../../../../assets/automationLeft.svg';
 import ContainedButton from '../../../common/button/contained';
 import AutoRight from '../../../../assets/automationRight.svg';
 import { figures } from './static';
+import Typography from '../../../common/typography';
 
 const Automation = () => {
   return (
-    <section className={styles.automation}>
-      <AutoLeft className={styles.leftImage} />
-      <div className={styles.content}>
-        <div className={styles.title}>
+    <section className={'automation'}>
+      <AutoLeft className={'leftImage'} />
+      <div className={'content'}>
+        <Typography className={'title'} variant={'h2'} weight={'light'}>
           Build web automation bots faster then ever using crawless
-        </div>
-        <div className={styles.description}>
+        </Typography>
+        <Typography className={'description'} variant={'h5'} weight={'regular'}>
           Join the community of developers from all over the world that rely on
           crawless
-        </div>
-        <div className={styles.dataFigures}>
+        </Typography>
+        <div className={'dataFigures'}>
           {figures.map(({ text, value }, index) => (
-            <div className={styles.figure} key={index}>
-              <div className={styles.value}>{value}</div>
-              <div className={styles.text}>{text}</div>
+            <div className={'figure'} key={index}>
+              <div className={'value'}>{value}</div>
+              <Typography className={'text'} variant={'h6'} weight={'bold'}>
+                {text}
+              </Typography>
             </div>
           ))}
         </div>
         <ContainedButton text={'Get started now'} onClick={() => {}} />
       </div>
-      <AutoRight className={styles.rightImage} />
+      <AutoRight className={'rightImage'} />
     </section>
   );
 };

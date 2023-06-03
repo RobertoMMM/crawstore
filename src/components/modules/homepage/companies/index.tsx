@@ -1,5 +1,4 @@
-import styles from './index.module.sass';
-import Image from 'next/image';
+import './index.sass';
 import Company1 from '../../../../assets/icons/companies/1.svg';
 import Company2 from '../../../../assets/icons/companies/2.svg';
 import Company3 from '../../../../assets/icons/companies/3.svg';
@@ -11,9 +10,9 @@ const companies = [Company1, Company2, Company3, Company4, Company5, Company6];
 
 const Companies = () => {
   return (
-    <section className={styles.companies}>
+    <section className={'companies'}>
       {companies.map((Icon, index: number) => (
-        <Icon key={index} className={styles.company} />
+        <Icon key={index} className={'company'} />
       ))}
     </section>
   );

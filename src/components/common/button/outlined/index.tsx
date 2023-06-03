@@ -1,15 +1,15 @@
-import styles from 'components/common/button/outlined/index.module.sass';
+import 'components/common/button/outlined/index.sass';
 import { ReactElement } from 'react';
 
-interface Props {
+const OutlinedButton = ({
+  text,
+  onClick,
+}: {
   text: string | ReactElement;
-  onClick: any;
-  className?: string;
-}
-
-const OutlinedButton = ({ text, onClick, className }: Props) => {
+  onClick: () => void;
+}) => {
   return (
-    <button className={className || styles.buttonOutlined} onClick={onClick}>
+    <button className={'outlinedButton'} onClick={onClick}>
       {text}
     </button>
   );

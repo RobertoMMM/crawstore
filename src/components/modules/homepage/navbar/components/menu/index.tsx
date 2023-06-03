@@ -1,5 +1,5 @@
 import MenuItem from './menuItem/MenuItems';
-import styles from 'components/modules/homepage/navbar/components/menu/index.module.sass';
+import 'components/modules/homepage/navbar/components/menu/index.sass';
 
 const menuItems = [
   {
@@ -18,7 +18,7 @@ const menuItems = [
 
 const Menu = () => {
   return (
-    <ul className={styles.list}>
+    <ul className={'list'}>
       {menuItems.map(({ value }, index) => (
         <MenuItem key={index} text={value} />
       ))}
