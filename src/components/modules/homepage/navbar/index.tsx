@@ -13,11 +13,7 @@ const Navbar = () => {
         <span className={'line'}></span>
       </button>
       <Menu />
-      <ContainedButton
-        className={'containedButton'}
-        text={'Try for free'}
-        onClick={() => {}}
-      />
+      <ContainedButton text={'Try for free'} onClick={() => {}} />
     </nav>
   );
 };
