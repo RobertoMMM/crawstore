@@ -15,7 +15,7 @@ const Shop = () => {
         </div>
         <OutlinedButton text={'Contact us'} onClick={() => {}} />
       </div>
-      <Image src={ShopImage} alt={'shop'} className={styles.image} />
+      <ShopImage className={styles.image} />
     </section>
   );
 };

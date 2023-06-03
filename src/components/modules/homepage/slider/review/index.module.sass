@@ -1,0 +1,70 @@
+@import 'src/styles/variables.module'
+
+.reviews
+  text-align: center
+  margin-top: 100px
+  display: flex
+  flex-direction: column
+  align-items: center
+
+  .title
+    font-size: 45px
+    color: $title
+    line-height: 52px
+    font-weight: 300
+
+  .description
+    color: $secondary-text
+    font-size: 20px
+    line-height: 30px
+    margin-top: 15px
+    max-width: 700px
+
+  .sliderContainer
+    display: flex
+    align-items: center
+    width: 100%
+
+    .slider
+      max-width: 700px
+      display: flex
+      margin-top: 50px
+      width: calc(100vw - 40px)
+      align-items: center
+      justify-content: center
+
+      .slide
+        display: flex
+        justify-content: center
+        padding-bottom: 60px
+
+        .content
+          display: flex
+          flex-direction: column
+          background: $light-dark
+          min-height: 400px
+          padding: 32px
+          border-radius: 16px
+          align-items: center
+          justify-content: center
+
+          .quote
+            color: $main-text
+            font-size: 20px
+            font-weight: 400
+            text-align: center
+            margin-bottom: 45px
+
+          .name, .job
+            font-size: 14px
+            font-weight: 700
+            color: $gray
+            margin-top: 20px
+
+          .job
+            margin-top: 10px
+            font-weight: 400
+
+        .image
+          display: flex
+          max-width: 200px

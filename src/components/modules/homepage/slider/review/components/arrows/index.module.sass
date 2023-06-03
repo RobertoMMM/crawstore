@@ -1,0 +1,20 @@
+@import 'src/styles/variables.module'
+
+.arrowButton
+  display: none
+
+  @include respond-to(large)
+    display: flex
+    background: none
+    outline: none
+    border: none
+    cursor: pointer
+
+  .icon
+    path, rect
+      stroke: $violet
+
+  .disabled
+    path, rect
+      stroke: $dark-gray
+

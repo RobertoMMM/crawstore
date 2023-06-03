@@ -27,33 +27,7 @@ import Companies from '../components/modules/homepage/companies';
 import Benefits from '../components/modules/homepage/benefits';
 import Automation from '../components/modules/homepage/automation';
 import WorkFlowSlider from '../components/modules/homepage/slider/workflow';
-
-const slides = [
-  {
-    title: 'Import/export workflow and tasks',
-    description:
-      'Et malesuada fames ac turpis egestas. Mattis enim ut tellus elementum sagittis vitae. Nisi lacus sed viverra tellus in hac. Tristique sollicitudin nibh sit amet commodo. Blanditturpis cursus in hac habitasse platea.',
-    image: MainImage,
-  },
-  {
-    title: 'Import/export workflow and tasks',
-    description:
-      'Et malesuada fames ac turpis egestas. Mattis enim ut tellus elementum sagittis vitae. Nisi lacus sed viverra tellus in hac. Tristique sollicitudin nibh sit amet commodo. Blanditturpis cursus in hac habitasse platea.',
-    image: MainImage,
-  },
-  {
-    title: 'Import/export workflow and tasks',
-    description:
-      'Et malesuada fames ac turpis egestas. Mattis enim ut tellus elementum sagittis vitae. Nisi lacus sed viverra tellus in hac. Tristique sollicitudin nibh sit amet commodo. Blanditturpis cursus in hac habitasse platea.',
-    image: MainImage,
-  },
-  {
-    title: 'Import/export workflow and tasks',
-    description:
-      'Et malesuada fames ac turpis egestas. Mattis enim ut tellus elementum sagittis vitae. Nisi lacus sed viverra tellus in hac. Tristique sollicitudin nibh sit amet commodo. Blanditturpis cursus in hac habitasse platea.',
-    image: MainImage,
-  },
-];
+import ReviewSlider from '../components/modules/homepage/slider/review';
 
 const products = [
   {
@@ -93,18 +67,7 @@ const links = [
   },
 ];
 
-const sliderStyles = {
-  '--swiper-pagination-bottom': '0px',
-  '--swiper-pagination-color': '#5C53F3',
-  '--swiper-pagination-bullet-inactive-color': '#3E3D4C',
-  '--swiper-pagination-bullet-inactive-opacity': '1',
-  '--swiper-pagination-bullet-size': '16px',
-} as CSSProperties;
-
 export default function Home() {
-  const [swiper, setSwiper] = useState<any>();
-  const [activeSlide, setActiveSlide] = useState(0);
-
   return (
     <section className={styles.section}>
       <HomePage />
@@ -113,34 +76,13 @@ export default function Home() {
       <Shop />
       <Alternatives />
       <Benefits />
-      <Swiper
-        className={styles.slider}
-        spaceBetween={50}
-        modules={[Pagination]}
-        pagination={{
-          dynamicBullets: true,
-          clickable: true,
-        }}
-        style={sliderStyles}
-        onSlideChange={(swiper) => setActiveSlide(swiper.activeIndex)}
-        onSwiper={(swiper) => setSwiper(swiper)}
-      >
-        {slides.map(({ title, image, description }, index) => (
-          <SwiperSlide className={styles.slide} key={index}>
-            <div className={styles.text}>
-              <span className={styles.main}>{title}</span>
-              <span className={styles.secondary}>{description}</span>
-            </div>
-            <Image src={image} alt={'main-image'} className={styles.image} />
-          </SwiperSlide>
-        ))}
-      </Swiper>
+      <ReviewSlider />
       <Companies />
       <Automation />
       <section className={styles.products}>
-        {products.map(({ icon, title, description }, index) => (
+        {products.map(({ icon: Icon, title, description }, index) => (
           <div key={index} className={styles.product}>
-            <Image src={icon} alt={'icon'} className={styles.icon} />
+            <Icon className={styles.icon} />
             <div className={styles.title}>{title}</div>
             <div className={styles.description}>{description}</div>
             <OutlinedButton text={'Explore'} onClick={() => {}} />
@@ -149,12 +91,12 @@ export default function Home() {
       </section>
       <section className={styles.resources}>
         <div className={styles.links}>
-          {links.map(({ title, children }, index) => (
+          {links.map(({ title: Title, children }, index) => (
             <div key={index} className={styles.row}>
-              {typeof title === 'string' ? (
-                <div className={styles.title}>{title}</div>
+              {typeof Title === 'string' ? (
+                <div className={styles.title}>{Title}</div>
               ) : (
-                <Image src={title} alt={'smallicon'} className={styles.title} />
+                <Title className={styles.title} />
               )}
               {children.map((text, index) => (
                 <div key={index} className={styles.link}>
@@ -175,11 +117,7 @@ export default function Home() {
           />
           <ContainedButton text={'Subscribe'} onClick={() => {}} />
           <div className={styles.agreement}>
-            <Image
-              src={AgreementIcon}
-              alt={'agreement'}
-              className={styles.agreementIcon}
-            />
+            <AgreementIcon className={styles.agreementIcon} />
             <div className={styles.secondary}>
               By submitting this form, I agree to the Crawless Privacy Policy
             </div>
@@ -195,11 +133,11 @@ export default function Home() {
           <div>Cookies</div>
         </div>
         <div className={styles.socialMedia}>
-          <Image src={FacebookIcon} alt={'facebook'} />
-          <Image src={TwitterIcon} alt={'twitter'} />
-          <Image src={InstagramIcon} alt={'instagram'} />
-          <Image src={StackoverflowIcon} alt={'stackoverflow'} />
-          <Image src={LinkedIcon} alt={'linkedin'} />
+          <FacebookIcon src={FacebookIcon} />
+          <TwitterIcon src={TwitterIcon} />
+          <InstagramIcon src={InstagramIcon} />
+          <StackoverflowIcon src={StackoverflowIcon} />
+          <LinkedIcon src={LinkedIcon} />
         </div>
       </footer>
     </section>

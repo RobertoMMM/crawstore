@@ -9,7 +9,7 @@ import { figures } from './static';
 const Automation = () => {
   return (
     <section className={styles.automation}>
-      <Image src={AutoLeft} alt={'autoLeft'} className={styles.leftImage} />
+      <AutoLeft className={styles.leftImage} />
       <div className={styles.content}>
         <div className={styles.title}>
           Build web automation bots faster then ever using crawless
@@ -28,7 +28,7 @@ const Automation = () => {
         </div>
         <ContainedButton text={'Get started now'} onClick={() => {}} />
       </div>
-      <Image src={AutoRight} alt={'autoRight'} className={styles.rightImage} />
+      <AutoRight className={styles.rightImage} />
     </section>
   );
 };

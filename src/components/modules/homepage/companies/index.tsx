@@ -12,13 +12,8 @@ const companies = [Company1, Company2, Company3, Company4, Company5, Company6];
 const Companies = () => {
   return (
     <section className={styles.companies}>
-      {companies.map((company: any, index: number) => (
-        <Image
-          src={company}
-          key={index}
-          className={styles.company}
-          alt={'company'}
-        />
+      {companies.map((Icon, index: number) => (
+        <Icon key={index} className={styles.company} />
       ))}
     </section>
   );

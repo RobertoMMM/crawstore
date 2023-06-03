@@ -7,7 +7,7 @@ import ContainedButton from '../../../common/button/contained';
 const Navbar = () => {
   return (
     <nav className={styles.navbar}>
-      <Image src={Logo} alt={'logo'} />
+      <Logo className={styles.image} />
       <button className={styles.navBurgerButton} onClick={() => {}}>
         <span className={styles.line}></span>
         <span className={styles.line}></span>
