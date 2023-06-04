@@ -1,5 +1,5 @@
 import MainLayout from '../layouts/main';
-import styles from 'pages/index.module.sass';
+import 'pages/index.sass';
 import HomePage from '../components/modules/homepage/header';
 import Bots from '../components/modules/homepage/bots';
 import Shop from '../components/modules/homepage/shop';
@@ -16,7 +16,7 @@ import Footer from '../components/modules/homepage/footer';
 
 export default function Home() {
   return (
-    <section className={styles.section}>
+    <section className={'section'}>
       <HomePage />
       <WorkFlowSlider />
       <Bots />
@@ -28,7 +28,7 @@ export default function Home() {
       <Automation />
       <Products />
       <Resources />
-      <div className={styles.breakLine}></div>
+      <div className={'breakLine'}></div>
       <Footer />
     </section>
   );
